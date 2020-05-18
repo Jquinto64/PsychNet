@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Offside' rel='stylesheet'>
+    <head>
+        <title>PsychNet: Screening Mental Health with AI </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <style type="text/css">
+        .parallax_img {
+        	height: 500px;
+        	background: linear-gradient(rgba(0,0,80,0.3), rgba(0,0,80,0.3)), url("https://www.synopsys.com/content/dam/synopsys/solutions/images/ai-solutions-neural-networks.jpg") no-repeat center;
+        	background-attachment: fixed;
+        	background-position: center;
+        	background-repeat: no-repeat;
+        	background-size: 100% auto;
+    
+        }
+        @media screen and (max-width: 768px) {
+        	.parallax_img {
+        		background-attachment: inherit;
+        	}
+        }
+        @media only screen and (max-device-width: 1366px) {
+              .parallax {
+                background-attachment: scroll;
+              }
+        }
+        </style>
+        
+    </head>
+    <div class = "parallax_img" style = "height: 100vh;"> 
+    <body>
+   <div style=" display: flex; align-items: center; justify-content: center; align-conten:center; min-height: 100%;  /* Fallback for browsers do NOT support vh unit */min-height: 100vh; width=800px">
+       <div class="mx-auto" style="width: 800px; height:400px">
+            <div class="card" style="background: rgba(255, 255, 255, 0.8); border-radius:16px" > 
+                <div class = "card-body">
+                    <h4 style="font-family:Offside; font-size:40px; font-weight:1000; color:#00008B"> PsychNet</h4>
+                    <small style="font-family:Offside; font-size:16px; font-weight:800; color:#00008B"> Screening Mental Health with AI </small> 
+                    <hr style="color:#00008B;background-color:#00008B;" />
+
+                        {% from "_formhelpers.html" import render_field %}
+                        <form method=post action="/results">
+                            <p style="font-family:Offside; font-size:20px; font-weight:900; font-style:bold; color:#000000"> What's on your mind? </p> 
+                            <dl>
+                                {{form.message(cols="102", rows="4", id="mess", style="border-color:#00008B; opacity:0.6; border-radius: 8px", onclick="white();")}}
+                                <script>
+                                    function white() {
+                                        document.getElementById("mess").style.color="#000000";
+                                    }                        
+                                </script>
+                            </dl>
+                            <div class="text-center">
+                                <style type="text/css">
+                                    /*This is modifying the btn-primary colors but you could create your own .btn-something class as well*/
+                                    .btn-primary {
+                                        color:  #fff;
+                                        background-color:  #00008B;
+                                        border-color: #00008B; /*set the color you want here*/
+                                        font-size:18px;
+                                    }
+                                    .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+                                        color: #fff;
+                                        background-color: #800080;
+                                        border-color: #800080; /*set the color you want here*/
+                                        font-size:18px;
+                                    }
+                                </style>
+                                <input class="btn btn-primary btn-lg" type="submit" value="Send Message">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    </div>
+</html>
+
+
+

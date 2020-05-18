@@ -1,0 +1,36 @@
+@import "bootstrap";
+html {
+    height: 100%;
+    width: 100%;
+}
+body {
+   background: url('/static/img2.jpeg') center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 1;
+  min-height:100%;
+}
+.button{
+ padding-top: 60px;
+}
+.myBackground {
+}
+
+.special-card {
+/* create a custom class so you 
+   do not run into specificity issues 
+   against bootstraps styles
+   which tends to work better than using !important 
+   (future you will thank you later)*/
+    
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity=1;
+}
+
+.textarea {
+  outline-color: #00008B;
+}
+
+
